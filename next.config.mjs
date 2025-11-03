@@ -1,3 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { experimental: { mdxRs: true } };
+const nextConfig = {
+  images: { formats: ["image/avif", "image/webp"] }
+};
 export default nextConfig;
