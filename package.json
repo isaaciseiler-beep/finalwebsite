@@ -19,7 +19,7 @@
     "framer-motion": "11.3.24",
     "contentlayer": "0.3.4",
     "next-contentlayer": "0.3.4",
-    "@resend/client": "2.3.0",
+    "resend": "^4.0.0",
     "openai": "4.67.3",
     "leaflet": "1.9.4",
     "react-leaflet": "4.2.1",
