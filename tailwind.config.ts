@@ -3,8 +3,7 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./content/**/*.{md,mdx}"
+    "./components/**/*.{ts,tsx}"
   ],
   theme: {
     extend: {
@@ -23,7 +22,7 @@ const config: Config = {
       animation: { "slow-pulse": "slow-pulse 6s ease-in-out infinite" },
       keyframes: {
         "slow-pulse": {
-          "0%,100%": { opacity: "0.55" }, // strings, not numbers
+          "0%,100%": { opacity: "0.55" },
           "50%": { opacity: "1" }
         }
       }
