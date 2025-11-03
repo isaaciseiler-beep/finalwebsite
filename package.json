@@ -9,21 +9,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "next build",
-    "postinstall": "contentlayer build"
+    "vercel-build": "next build"
   },
   "dependencies": {
     "next": "14.2.7",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "framer-motion": "11.3.24",
-    "contentlayer": "0.3.4",
-    "next-contentlayer": "0.3.4",
-    "resend": "^4.0.0",
-    "openai": "4.67.3",
     "leaflet": "1.9.4",
-    "react-leaflet": "4.2.1",
-    "zod": "3.23.8"
+    "react-leaflet": "4.2.1"
   },
   "devDependencies": {
     "typescript": "5.6.3",
@@ -37,10 +31,6 @@
     "@tailwindcss/forms": "0.5.7",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.7"
-  },
-  "overrides": {
-    "next-contentlayer": {
-      "next": "14.2.7"
-    }
   }
 }
+
