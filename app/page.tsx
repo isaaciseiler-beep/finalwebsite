@@ -1,39 +1,41 @@
+import ParallaxHero from "@/components/ParallaxHero";
 import { InTheNews } from "@/components/InTheNews";
 import Link from "next/link";
 
-
 export default function Home(){
-return (
-<section className="p-8 space-y-10">
-<header className="card p-8">
-<h1 className="font-display text-4xl md:text-5xl tracking-tight">Designerly, minimal, motion‑rich.</h1>
-<p className="mt-3 text-muted max-w-2xl">Portfolio and lab for AI, strategy, journalism, and maps.</p>
-<div className="mt-6 flex gap-3">
-<Link href="/projects" className="px-4 py-2 rounded-xl bg-accent text-accent-fg">See projects</Link>
-<Link href="/photos" className="px-4 py-2 rounded-xl bg-white/5 ring-1 ring-white/10">Photos</Link>
-</div>
-</header>
+  return (
+    <section className="p-6 md:p-8 space-y-10">
+      <ParallaxHero/>
 
+      <section className="grid md:grid-cols-2 gap-6">
+        <HomeCard title="Projects" href="/projects" blurb="Case-style writeups with receipts."/>
+        <HomeCard title="Experience" href="/experience" blurb="Timeline + recruiter assistant."/>
+        <HomeCard title="Blog" href="/blog" blurb="Notes and field reports."/>
+        <HomeCard title="Photos" href="/photos" blurb="Gallery + world map."/>
+      </section>
 
-<InTheNews />
+      {/* Status now on home bottom */}
+      <section className="card p-6">
+        <div className="text-xs uppercase tracking-widest opacity-70">Current status</div>
+        <div className="mt-1 text-sm">Open to 2026 roles. Building AI+Gov index v2.</div>
+        <div className="mt-3 flex gap-2 flex-wrap">
+          <span className="px-2 py-1 text-xs rounded-full bg-white/15 ring-1 ring-white/30">Now: Taipei → DC</span>
+          <span className="px-2 py-1 text-xs rounded-full bg-white/5 ring-1 ring-white/10">Writing: Thesis</span>
+        </div>
+      </section>
 
-
-<section className="grid md:grid-cols-2 gap-6">
-<HomeCard title="Projects" href="/projects" blurb="Case‑style writeups with receipts."/>
-<HomeCard title="Experience" href="/experience" blurb="Timeline + recruiter assistant."/>
-<HomeCard title="Blog" href="/blog" blurb="Notes and field reports."/>
-<HomeCard title="Photos" href="/photos" blurb="Gallery + world map."/>
-</section>
-</section>
-);
+      {/* News moved to the very bottom */}
+      <InTheNews />
+    </section>
+  );
 }
-
 
 function HomeCard({title, blurb, href}:{title:string; blurb:string; href:string}){
-return (
-<Link href={href} className="card p-6 block hover:scale-[1.01] transition-transform will-change-transform">
-<div className="text-lg font-semibold">{title}</div>
-<p className="text-sm text-muted mt-1">{blurb}</p>
-</Link>
-);
+  return (
+    <Link href={href} className="card p-6 block">
+      <div className="text-lg font-semibold">{title}</div>
+      <p className="text-sm text-muted mt-1">{blurb}</p>
+    </Link>
+  );
 }
+
