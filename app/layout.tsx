@@ -4,22 +4,24 @@ import { Sidebar } from "@/components/Sidebar";
 import { GradientBackdrop } from "@/components/GradientBackdrop";
 import { Plus_Jakarta_Sans, Sora } from "next/font/google";
 
+
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta", display: "swap" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora", display: "swap" });
 
-export const metadata: Metadata = {
-  title: "Your Name — Portfolio",
-  description: "Cutting-edge portfolio with left nav, gradients, and motion."
-};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" className={`${jakarta.variable} ${sora.variable}`}>
-      <body className="app-shell">
-        <GradientBackdrop />
-        <aside className="sidebar"><Sidebar/></aside>
-        <main className="relative">{children}</main>
-      </body>
-    </html>
-  );
+export const metadata: Metadata = { title: "Isaac Seiler — Portfolio", description: "Minimal, motion‑rich." };
+
+
+export default function RootLayout({ children }: { children: React.ReactNode }){
+return (
+<html lang="en" className={`${jakarta.variable} ${sora.variable}`}>
+<body className="app-shell">
+<GradientBackdrop />
+<aside className="sidebar"><Sidebar/></aside>
+<main className="relative font-sans">
+{children}
+</main>
+</body>
+</html>
+);
 }
